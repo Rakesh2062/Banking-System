@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include<string.h>
-#include<dirent.h>
+#include <stdio.h>
+#include <string.h>
+#include <dirent.h>
 
 struct login
 {
@@ -9,7 +9,7 @@ struct login
 
 int login()
 {
-    int i=0;   
+    int i = 0;
 
     printf("Enter username: ");
     scanf("%s", &l[1].username);
@@ -20,24 +20,27 @@ int login()
     struct dirent *file;
     char files[100][100];
 
-    while(file = readdir(folder)){
-        if(strstr(file->d_name, ".txt") != NULL){
+    while (file = readdir(folder))
+    {
+        if (strstr(file->d_name, ".txt") != NULL)
+        {
             FILE *fp;
             fp = fopen(file->d_name, "r");
-            if(fp == NULL){
+            if (fp == NULL)
+            {
                 return 0;
             }
             fscanf(fp, "%s", l[0].username);
             fscanf(fp, "%s", l[0].pass);
 
-            if(strcmp(l[0].username, l[1].username)==0 && strcmp(l[0].pass, l[1].pass)==0){
-                return i+1;
+            if (strcmp(l[0].username, l[1].username) == 0 && strcmp(l[0].pass, l[1].pass) == 0)
+            {
+                return i + 1;
             }
             i++;
         }
-        
     }
 
-    
+    closedir(folder);
     return 0;
 }

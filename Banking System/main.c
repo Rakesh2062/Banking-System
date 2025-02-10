@@ -10,17 +10,18 @@ int main()
     int ans;
     ans = login();
 
-    switch(ans){
-        case 0:
-            printf("Entered username and password doesnot match. Please try again\n");
-            main();
-            break;
-        case 1:
-            admin();
-            break;
-        default: 
-            user();
+    switch (ans)
+    {
+    case 0:
+        printf("Entered username and password doesnot match. Please try again\n");
+        main();
+        break;
+    case 1:
+        admin();
+        break;
+    default:
+        user();
     }
-    
+
     return 0;
 }
