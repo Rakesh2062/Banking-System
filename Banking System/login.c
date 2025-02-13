@@ -21,7 +21,6 @@ int login()
 
     DIR *folder = opendir(".");  // For opening current directory i.e. Banking System 
     struct dirent *file; // it opens all the files in the current directory (for us admin.c, admin.txt..... and so on)
-    char files[100][100];
 
     while (file = readdir(folder))    // it simply opens the files one by one till there exists file in the directory
     {
