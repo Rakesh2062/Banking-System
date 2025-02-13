@@ -1,19 +1,18 @@
-// Hello, this is not my project
 #include <stdio.h>
 #include <string.h>
 #include <dirent.h>
 
 struct login
 {
-    char username[20], pass[20];
+    char acc_no[20], pass[20];
 } l[2];
 
 int login()
 {
     int i = 0;
 
-    printf("Enter username: ");
-    scanf("%s", &l[1].username);
+    printf("Enter acc_no: ");
+    scanf("%s", &l[1].acc_no);
     printf("Enter password: ");
     scanf("%s", &l[1].pass);
 
@@ -31,10 +30,10 @@ int login()
             {
                 return 0;
             }
-            fscanf(fp, "%s", l[0].username);
+            fscanf(fp, "%s", l[0].acc_no);
             fscanf(fp, "%s", l[0].pass);
 
-            if (strcmp(l[0].username, l[1].username) == 0 && strcmp(l[0].pass, l[1].pass) == 0)
+            if (strcmp(l[0].acc_no, l[1].acc_no) == 0 && strcmp(strlwr(l[0].pass), strlwr(l[1].pass)) == 0)
             {
                 return i + 1;
             }

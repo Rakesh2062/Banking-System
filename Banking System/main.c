@@ -13,7 +13,7 @@ int main()
     switch (ans)
     {
     case 0:
-        printf("Entered username and password doesnot match. Please try again\n");
+        printf("Entered account number and password doesnot match. Please try again\n");
         main();
         break;
     case 1:
