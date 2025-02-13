@@ -220,6 +220,9 @@ label_3:
         return;
     }
 
+    //Need a way to check if the user to whose account amount is being transferes file exists or not will add that later
+    // preferably will pull form admin part
+    
     fptr = fopen("file location of logged in user", "rb"); // Reminder that this line needs editing later
     if (fptr == NULL)
     {
