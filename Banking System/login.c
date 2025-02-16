@@ -31,6 +31,7 @@ int login()
             fp = fopen(file->d_name, "r");   // opening file which has name as file->d_name with read mode.
             if (fp == NULL)  // file doesnot open then we will return 0.
             {
+                printf("Error in opening file");
                 return 0;
             }
             fscanf(fp, "%s", l[0].acc_no); // it stores the first line in the files (for us the first line is account number) into l[0].acc_no
@@ -42,6 +43,7 @@ int login()
                 return i + 1; 
                 // it will return i+1 (i.e. 0+1=1) to the calling function. Note: It will only return 1 for the first time but it will return higher than 1 as the loop will continue.
             }
+            fclose(fp);
             i++; // we will inc. the value of i by 1 and now the value of i will 1.
         }
     }
